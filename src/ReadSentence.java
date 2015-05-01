@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -8,19 +9,18 @@ import java.util.HashSet;
  */
 public class ReadSentence {
 
-    HashSet<String> SetOfSentences = new HashSet<String>();
+    ArrayList<String> SetOfSentences = new ArrayList<String>();
 
     public void read(String file) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String line = bufferedReader.readLine();
         while(line != null){
-            System.out.println(line);
             SetOfSentences.add(line);
             line = bufferedReader.readLine();
         }
     }
 
-    public HashSet<String> getSetOfSentences() {
+    public ArrayList<String> getSetOfSentences() {
         return SetOfSentences;
     }
 
